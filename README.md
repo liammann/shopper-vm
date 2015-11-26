@@ -1,2 +1,0 @@
-# Vagrant
-Start Vagrant Install
