@@ -7,3 +7,7 @@ Clone this repo `git clone https://github.com/liammann/webres.git webres`
 Type `vagrant up`
 Navigate to `http://192.168.33.22:3000`
 
+## TODO 
+- Setup PHP7 
+- Setup server application (Tom)
+- [maybe] fix node 
