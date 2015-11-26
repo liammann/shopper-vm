@@ -3,7 +3,7 @@
 ## How to use
 - Install vagrant - https://www.vagrantup.com/downloads.html
 - Clone this repo `git clone https://github.com/liammann/webres.git webres`
-- `cd` to it directory - `cd webres` 
+- Navigate to folder - `cd webres` 
 - Type `vagrant up`
 - Navigate to `http://192.168.33.22:3000`
 
