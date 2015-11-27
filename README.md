@@ -7,14 +7,13 @@
 - Type `vagrant up`
 - Navigate to `http://192.168.33.22:3000`
 
-## TODO 
+## Vagrant todo 
 - Setup PHP7 
 - Setup server application (Tom)
-- [maybe] fix node 
-- 
+- maybe fix node
 
 ## Client Application
-### TODO 
+### todo 
 * add slider to edit the thresholds for each colour line - done
 * colour to hex values 
 * make customer stats area 
