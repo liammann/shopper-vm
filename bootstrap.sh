@@ -23,10 +23,16 @@ sudo apt-get -y upgrade
 # sudo apt-get install -y php5-curl
 
 sudo apt-get -y install git
-sudo apt-get -y install nodejs
 sudo apt-get -y install npm
 sudo apt-get -y install nodejs-legacy
 
 cd /vagrant/www/html
-sudo npm start
 
+
+wget https://packages.erlang-solutions.com/erlang-solutions_1.0_all.deb && sudo dpkg -i erlang-solutions_1.0_all.deb
+sudo apt-get -y update
+sudo apt-get -y install elixir
+
+apt-get install -y erlang-dev
+
+sudo chmod 777 /vagrant/installServerApp.sh
