@@ -35,3 +35,16 @@
 * count number of times a customer vistis a store
 * post request to save all config option
 * predict where the new store should go
+
+
+curl -X POST http://192.168.33.22:4000/clientapi/stores -H 'content-type:application/json' -d '{"store":{"store_id": 3, "post_code": "PO11HT", "store_open_date": "2000-04-13"}}'
+curl -X POST http://192.168.33.22:4000/clientapi/stores -H 'content-type:application/json' -d '{"store":{"store_id": 4, "post_code": "PO64SR", "store_open_date": "2010-04-13"}}'
+
+curl -X POST http://192.168.33.22:4000/clientapi/customers -H 'content-type:application/json' -d '{"customer":{"customer_id": 1, "post_code": "po40dh"}}'
+curl -X POST http://192.168.33.22:4000/clientapi/customers -H 'content-type:application/json' -d '{"customer":{"customer_id": 2, "post_code": "po51he"}}'
+curl -X POST http://192.168.33.22:4000/clientapi/customers -H 'content-type:application/json' -d '{"customer":{"customer_id": 3, "post_code": "po80he"}}'
+
+curl -X POST http://192.168.33.22:4000/clientapi/storevisits -H 'content-type:application/json' -d '{"store_visit":{"store_visit_id": 1, "visit_date": "2012-03-29", "customer_id": 1, "store_id": 3}}'
+curl -X POST http://192.168.33.22:4000/clientapi/storevisits -H 'content-type:application/json' -d '{"store_visit":{"store_visit_id": 2, "visit_date": "2002-03-29", "customer_id": 2, "store_id": 3}}'
+curl -X POST http://192.168.33.22:4000/clientapi/storevisits -H 'content-type:application/json' -d '{"store_visit":{"store_visit_id": 3, "visit_date": "2011-03-29", "customer_id": 3, "store_id": 3}}'
+
