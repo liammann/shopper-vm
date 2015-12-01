@@ -5,7 +5,19 @@
 - Clone this repo `git clone https://github.com/liammann/webres.git webres`
 - Navigate to folder - `cd webres` 
 - Type `vagrant up`
+- `vagrant ssh` x2 windows
+- window1: `/vagrant/installServerApp.sh` - this will setup the server app, say yes "y" to everything 
+- window2 `cd client-app` then `npm start`
+
+- open new window3, `./dummydata.sh` to install dummy data 
+
 - Navigate to `http://192.168.33.22:3000`
+
+
+
+
+
+
 
 ## Vagrant todo 
 - Setup PHP7 
