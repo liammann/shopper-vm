@@ -1,10 +1,8 @@
-# WEB Research - Coursework Sprint 1 
-This is a Vagrant machine for both mine and Tom Punt WebRes Coursework Sprint 1. 
+# Web Research - Coursework Sprint 1 
+This is a Vagrant machine for mine and Tom Punt WebRes Coursework Sprint 1. 
 
 - The server app repo - https://github.com/tpunt/shopper
 - The client app repo - https://github.com/liammann/shopper-distance
-
-It visualises the spatial distribution of a company’s stores and their visiting customer base to provide further business intelligence for arbitrating new store locations.
 
 ## How to use
 - Install vagrant - https://www.vagrantup.com/downloads.html
@@ -14,6 +12,6 @@ It visualises the spatial distribution of a company’s stores and their visitin
 - `vagrant ssh` x2 windows
 	- window1: `/vagrant/installServerApp.sh` - this will setup the server app, say yes "y" to everything 
 	- window2, `./dummydata.sh` to install dummy data 
-	- window2 `cd client-app` then `npm start`
+	- window2: `/vagrant/installClientApp.sh` - this will setup the client app, say yes "y" to everything 
 
 - Navigate to `http://192.168.33.22:3000`
