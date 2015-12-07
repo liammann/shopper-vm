@@ -18,6 +18,6 @@ sudo apt-get -y install elixir
 apt-get install -y erlang-dev
 
 sudo chmod 777 /vagrant/installServerApp.sh
-sudo chmod 777 /vagrant/startClientApp.sh
+sudo chmod 777 /vagrant/installClientApp.sh
 
 
