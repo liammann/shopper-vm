@@ -1,0 +1,1 @@
+{"nfs":{"/home/vagrant/client-app":{"type":"nfs","create":true,"guestpath":"/home/vagrant/client-app","hostpath":"/Users/liammann/Vagrant/webres/client","disabled":false,"map_uid":501,"map_gid":20,"nfs_udp":true,"nfs_version":3,"uuid":"573458628"}},"virtualbox":{"/vagrant":{"guestpath":"/vagrant","hostpath":"/Users/liammann/Vagrant/webres","disabled":false}}}

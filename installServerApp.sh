@@ -1,5 +1,5 @@
 cd ~
-git clone https://liammann:password11@github.com/tpunt/shopper.git server-app
+git clone https://github.com/tpunt/shopper.git server-app
 cd server-app
 pwd
 npm install

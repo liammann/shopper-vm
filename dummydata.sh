@@ -3,14 +3,14 @@ ARRAY=(PO11JL PO11SA PO11RX PO11BU PO11BT PO11RS PO11EJ PO11RQ PO11EH PO11EG PO1
 
 ARRAY2=(PO61JS PO61RW PO61RR PO61AD PO61RN PO61BN PO61BL PO61RG PO61QZ PO61QY PO61QX PO61QT PO61QR PO61QQ PO61QH PO61QG PO61QF PO61QA PO61PY PO61BE PO61PU PO61PL PO61PJ PO61PE PO61AY PO61NX PO61NW PO61NQ PO61NP PO61NG PO61LP PO61LL PO61LJ PO61LH PO61LE PO61LA PO61JY PO61JW PO61JT PO61AB PO61JR PO61JP PO61JN PO61JJ PO61JH PO61AT PO61AS PO61HZ PO61HY PO61AQ PO61HU PO61HT PO61HR PO61AP PO61HN PO61HL PO61HH PO61HG PO61HE PO61AL PO61AJ PO61EY PO61EW PO61EU PO61ES PO61ER PO61EN PO61EL PO61EH PO61AH PO61AG PO61AE PO61DU PO61DS PO61DR PO61DP PO61DN PO61DL PO61DH PO61DG PO61DF PO61DE PO61DB PO61DA PO61BY PO61BW PO75JB PO75JA PO75HZ PO75HS PO75HQ PO75HP PO75HN PO75HJ PO75HH PO75HG PO75HF PO75HD PO75HB PO75HA PO75FL PO75FH PO75FG PO75FF PO74AE PO74AD PO75EZ PO75EY PO75EW PO75EU PO75ET PO75ER PO73BE PO75EP PO75EL PO75EJ PO75EH PO75EF PO75EE PO75ED PO75EA PO75DZ PO75DY PO75DU PO75DT PO75DS PO75DR PO75DQ PO75DN PO75DL PO75DJ PO75DG PO75DF PO75DD PO75DB PO75DA PO75BY PO75BX PO73AZ PO75BT PO75BS PO75BP PO75BN PO75BH PO73AY PO75BA PO75AZ PO75AX PO75AW PO75AT PO75AS PO75AQ PO75AP PO73AU PO75AJ PO75AF PO73AR PO75AB PO73AQ PO73AG PO74TD PO74SZ PO74SW PO74ST PO74SQ PO74SN PO73AF PO74RZ PO74RX PO74RN PO74RJ PO74RF PO74RE PO74QX PO74QH PO74QG PO74QA PO74AF PO80PD PO80NU PO80LU PO80LR PO11SA PO11BT PO35BJ PO35HL PO35ET PO35EE PO51RQ PO51ND PO51HS PO51ER PO51SG )
 
-curl -X POST http://192.168.33.22:4000/clientapi/stores -H 'content-type:application/json' -d '{"store":{"store_id": 3, "post_code": "PO11HT", "store_open_date": "2000-04-13"}}'
-curl -X POST http://192.168.33.22:4000/clientapi/stores -H 'content-type:application/json' -d '{"store":{"store_id": 4, "post_code": "PO64SR", "store_open_date": "2010-04-13"}}'
+curl -X POST http://192.168.33.22:4000/clientapi/stores -H 'content-type:application/json' -d '{"store":{"store_id": 3, "postcode": "PO11HT", "store_open_date": "2000-04-13"}}'
+curl -X POST http://192.168.33.22:4000/clientapi/stores -H 'content-type:application/json' -d '{"store":{"store_id": 4, "postcode": "PO64SR", "store_open_date": "2010-04-13"}}'
 
 
 while [ $i -lt 200 ]
 do
 POSTCODE="${ARRAY[$(gshuf -i 0-1000 -n 1)]}"
-curl -X POST http://192.168.33.22:4000/clientapi/customers -H 'content-type:application/json' -d '{"customer":{"customer_id": '$i', "post_code":"'$POSTCODE'"}}'
+curl -X POST http://192.168.33.22:4000/clientapi/customers -H 'content-type:application/json' -d '{"customer":{"customer_id": '$i', "postcode":"'$POSTCODE'"}}'
 curl -X POST http://192.168.33.22:4000/clientapi/store_visits -H 'content-type:application/json' -d '{"store_visit":{"store_visit_id": '$i', "visit_date": "'$( gshuf -i 2000-2015 -n 1 )'-03-29", "customer_id": '$i', "store_id": 3}}' 
 curl -X POST http://192.168.33.22:4000/clientapi/store_visits -H 'content-type:application/json' -d '{"store_visit":{"store_visit_id": '$(( $i + 1000 ))', "visit_date": "'$( gshuf -i 2000-2015 -n 1 )'-03-29", "customer_id": '$i', "store_id": 3}}'
 curl -X POST http://192.168.33.22:4000/clientapi/store_visits -H 'content-type:application/json' -d '{"store_visit":{"store_visit_id": '$(( $i + 5000 ))', "visit_date": "'$( gshuf -i 2000-2015 -n 1 )'-03-29", "customer_id": '$i', "store_id": 3}}'
@@ -22,7 +22,7 @@ done
 while [ $i -lt 90 ]
 do
 POSTCODE2="${ARRAY2[$(gshuf -i 0-140 -n 1)]}"
-curl -X POST http://192.168.33.22:4000/clientapi/customers -H 'content-type:application/json' -d '{"customer":{"customer_id": '$(( $i + 10000 ))', "post_code":"'$POSTCODE2'"}}'
+curl -X POST http://192.168.33.22:4000/clientapi/customers -H 'content-type:application/json' -d '{"customer":{"customer_id": '$(( $i + 10000 ))', "postcode":"'$POSTCODE2'"}}'
 curl -X POST http://192.168.33.22:4000/clientapi/store_visits -H 'content-type:application/json' -d '{"store_visit":{"store_visit_id": '$i', "visit_date": "'$( gshuf -i 2000-2015 -n 1 )'-03-29", "customer_id": '$(( $i + 10000 ))', "store_id": 4}}' 
 curl -X POST http://192.168.33.22:4000/clientapi/store_visits -H 'content-type:application/json' -d '{"store_visit":{"store_visit_id": '$(( $i + 1000 ))', "visit_date": "'$( gshuf -i 2000-2015 -n 1 )'-03-29", "customer_id": '$(( $i + 10000 ))', "store_id": 4}}'
 curl -X POST http://192.168.33.22:4000/clientapi/store_visits -H 'content-type:application/json' -d '{"store_visit":{"store_visit_id": '$(( $i + 5000 ))', "visit_date": "'$( gshuf -i 2000-2015 -n 1 )'-03-29", "customer_id": '$(( $i + 10000 ))', "store_id": 4}}'
